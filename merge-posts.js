@@ -88,8 +88,8 @@ const createJournalAst = (posts) => {
   return list;
 }
 
-const getJournals = (journals) => {
-  return journals.chilren && journals.children.length > 0 ? journals.map(j => toMarkdown(j.children[0]).replace(/\n$/, '')) : [];
+const getJournals = (childrenAst) => {
+  return childrenAst.type === 'list' ? childrenAst.children.map(j => toMarkdown(j.children[0]).replace(/\n$/, '')) : [];
 }
 
 const comparePost = (a, b, targetDate) => {
@@ -123,7 +123,7 @@ const main = async() => {
   console.warn(`${posts.length}: 対象日のSlack投稿`);
 
   const targetHeaderIndex = ast.children.findIndex(node => node.type === 'heading' && node.children[0]?.value === 'Journal');
-  const journals = getJournals(ast.children[targetHeaderIndex + 1].children);
+  const journals = getJournals(ast.children[targetHeaderIndex + 1]);
   console.warn(`${journals.length}: Journal`);
 
   // すでに記入されているMemosの中身をpostedとMergeする、時、分でソートした内容を反映させる
