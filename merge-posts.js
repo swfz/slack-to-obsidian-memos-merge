@@ -19,9 +19,6 @@ const main = async() => {
   console.warn(`${posts.length}: 対象日のSlack投稿`);
 
   const parsed = parseAst(ast);
-  // const targetHeaderIndex = ast.children.findIndex(node => node.type === 'heading' && node.children[0]?.value === 'Journal');
-  // const journals = getJournals(ast.children[targetHeaderIndex + 1]);
-  // const afterJournalsContentsIndex = journals.length === 0 ? targetHeaderIndex + 1 : targetHeaderIndex + 2;
   console.warn(`${parsed.journals.length}: Journal`);
 
   // すでに記入されているMemosの中身をpostedとMergeする、時、分でソートした内容を反映させる

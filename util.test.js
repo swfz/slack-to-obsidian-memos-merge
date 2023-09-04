@@ -1,4 +1,5 @@
-import { removePositionFromAst, createAst, parseAst, getSlackMessages, markdownToAst, mergePosts, astToMarkdown } from './util.js'
+import { removePositionFromAst, createAst, parseAst, markdownToAst, mergePosts, astToMarkdown } from './util.js'
+import * as fs from 'fs'
 
 describe.each`
 memos | count | journalsHeaderIndex | afterJournalsContentsIndex
@@ -63,14 +64,88 @@ describe('Memos0件', () => {
   });
 });
 
+describe('mergePost', () => {
+  test('memos数件, slack数件', () => {
+    const posts = [
+      '00:20 Slack1',
+      '02:00 Slack2'
+    ];
+    const journals = [
+      '00:30 Memo1',
+      '00:31 Memo2',
+    ];
 
-// mergePostのテスト memos0, slack0
-// mergePostのテスト memos複数, slack0
-// mergePostのテスト memos0, slack複数
-// mergePostのテスト memos複数, slack複数
+    const merged = mergePosts(posts, journals, '2023-08-01');
+    expect(merged).toStrictEqual([
+      '00:20 Slack1',
+      '00:30 Memo1',
+      '00:31 Memo2',
+      '02:00 Slack2',
+    ]);
+  });
 
+  test('memo0, slack0', () => {
+    const posts = [];
+    const journals = [];
 
-// journalAstのテスト
+    const merged = mergePosts(posts, journals, '2023-08-01');
+    expect(merged).toStrictEqual([]);
+  });
 
-// getSlackMEssageのテスト、モック必要
+  test('memo0, slack数件', () => {
+    const posts = [
+      '00:20 Slack1',
+      '02:00 Slack2'
+    ];
+    const journals = [];
+
+    const merged = mergePosts(posts, journals, '2023-08-01');
+    expect(merged).toStrictEqual([
+      '00:20 Slack1',
+      '02:00 Slack2'
+    ]);
+  });
+
+  test('memo数件, slack0', () => {
+    const posts = [];
+    const journals = [
+      '00:30 Memo1',
+      '00:31 Memo2',
+    ];
+
+    const merged = mergePosts(posts, journals, '2023-08-01');
+    expect(merged).toStrictEqual([
+      '00:30 Memo1',
+      '00:31 Memo2',
+    ]);
+  });
+
+  test('同時刻', () => {
+    const posts = [
+      '00:20 Slack1',
+      '00:20 Slack2'
+    ];
+    const journals = [
+      '00:20 Memo1',
+      '00:20 Memo2',
+    ];
+
+    const merged = mergePosts(posts, journals, '2023-08-01');
+    expect(merged).toStrictEqual([
+      '00:20 Slack1',
+      '00:20 Slack2',
+      '00:20 Memo1',
+      '00:20 Memo2',
+    ]);
+  });
+});
+
+describe('Convert AST and Markdown', () => {
+  test('余計な変換がされない', () => {
+    const ast = markdownToAst('./test_daily_note_memos1.md');
+    const markdown = astToMarkdown(ast);
+
+    expect(markdown).toBe(fs.readFileSync('./test_daily_note_memos1.md', 'utf8'));
+  });
+});
 
