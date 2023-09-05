@@ -8,8 +8,10 @@ const main = async() => {
   const slackClient = new WebClient(slackToken);
 
   const args = process.argv.slice(2);
-  const targetDate = args[0];
-  const markdownFilename = args[1];
+  const markdownDir = args[0];
+  const targetDate = args[1];
+
+  const markdownFilename = `${markdownDir}/${targetDate}.md`;
 
   // MD全体のAST
   const ast = markdownToAst(markdownFilename);
