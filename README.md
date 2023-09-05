@@ -7,7 +7,7 @@ ObsidianMemosにつぶやきとかを集約するためのスクリプト
 PCさわれないとき用にSlackポスト、後日スクリプトを実行してObsidianに貼り付ける
 
 ```
-node merge-posts.js 2023-07-30 /path/to/obsidian/daily_note/2023-07-30.md
+node merge-posts.js /path/to/obsidian/daily_note 2023-07-30
 ```
 
 ## Environment
