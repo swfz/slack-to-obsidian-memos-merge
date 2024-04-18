@@ -643,13 +643,14 @@
     p-retry "^4.0.0"
 
 "@slack/web-api@^7.0.0":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-7.0.2.tgz#1291d3af201517d75f04df1170d6cb833c44a778"
-  integrity sha512-nY1KO+7i4iURihThS1kMOElzesx4jqRJtkxLS9FOT8Debh7vQAzzbzxpMB4QauSs15030eyJ16HCf1IfCT4BKQ==
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-7.0.3.tgz#e33f3e0356ebc5bf63785659ecda4ec62fde27b2"
+  integrity sha512-X2fc8Yr0477TroIOE7Iw0JC3RmRVYW94GNJMxZ1hEewIcJoGq+6S2152IhnMsVguvlrplxNTOsmKB9aadmQfyg==
   dependencies:
     "@slack/logger" "^4.0.0"
     "@slack/types" "^2.9.0"
     "@types/node" ">=18.0.0"
+    "@types/retry" "0.12.0"
     axios "^1.6.5"
     eventemitter3 "^5.0.1"
     form-data "^4.0.0"
@@ -752,9 +753,9 @@
     undici-types "~5.26.4"
 
 "@types/node@>=18.0.0":
-  version "20.11.17"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.17.tgz#cdd642d0e62ef3a861f88ddbc2b61e32578a9292"
-  integrity sha512-QmgQZGWu1Yw9TDyAP9ZzpFJKynYNeOvwMJmaxABfieQoVoiVOS6MN1WSpqpRcbeA5+RW82kraAVxCCJg+780Qw==
+  version "20.12.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.12.7.tgz#04080362fa3dd6c5822061aa3124f5c152cff384"
+  integrity sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==
   dependencies:
     undici-types "~5.26.4"
 
