@@ -43,7 +43,7 @@ export const astToMarkdown = (ast) => {
 
 export const transformer = (message) => {
   const {text, ts} = message;
-  const time = dayjs.unix(ts).format('HH:mm');
+  const time = dayjs.unix(ts).format('HH:mm:ss');
 
   return `${time} ${text}`;
 }
