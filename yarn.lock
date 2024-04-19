@@ -643,9 +643,9 @@
     p-retry "^4.0.0"
 
 "@slack/web-api@^7.0.0":
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-7.0.3.tgz#e33f3e0356ebc5bf63785659ecda4ec62fde27b2"
-  integrity sha512-X2fc8Yr0477TroIOE7Iw0JC3RmRVYW94GNJMxZ1hEewIcJoGq+6S2152IhnMsVguvlrplxNTOsmKB9aadmQfyg==
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-7.0.4.tgz#262377ff1b8b5205029d2c24c71b8915613ba7fc"
+  integrity sha512-21tbte7N8itwjG7nsiQbDmXP9T/oqEILuvyL2UtgaZxfSY4a1JWWsLGL5n/hcgS2WE2oxmEHsBuhuRkZDwDovw==
   dependencies:
     "@slack/logger" "^4.0.0"
     "@slack/types" "^2.9.0"
