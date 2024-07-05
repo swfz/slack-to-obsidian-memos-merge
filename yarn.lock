@@ -615,25 +615,7 @@
   resolved "https://registry.yarnpkg.com/@slack/types/-/types-2.11.0.tgz#948c556081c3db977dfa8433490cc2ff41f47203"
   integrity sha512-UlIrDWvuLaDly3QZhCPnwUSI/KYmV1N9LyhuH6EDKCRS1HWZhyTG3Ja46T3D0rYfqdltKYFXbJSSRPwZpwO0cQ==
 
-"@slack/web-api@^7.0.0":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-7.0.4.tgz#262377ff1b8b5205029d2c24c71b8915613ba7fc"
-  integrity sha512-21tbte7N8itwjG7nsiQbDmXP9T/oqEILuvyL2UtgaZxfSY4a1JWWsLGL5n/hcgS2WE2oxmEHsBuhuRkZDwDovw==
-  dependencies:
-    "@slack/logger" "^4.0.0"
-    "@slack/types" "^2.9.0"
-    "@types/node" ">=18.0.0"
-    "@types/retry" "0.12.0"
-    axios "^1.6.5"
-    eventemitter3 "^5.0.1"
-    form-data "^4.0.0"
-    is-electron "2.2.2"
-    is-stream "^2"
-    p-queue "^6"
-    p-retry "^4"
-    retry "^0.13.1"
-
-"@slack/web-api@^7.0.1":
+"@slack/web-api@^7.0.0", "@slack/web-api@^7.0.1":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-7.0.4.tgz#262377ff1b8b5205029d2c24c71b8915613ba7fc"
   integrity sha512-21tbte7N8itwjG7nsiQbDmXP9T/oqEILuvyL2UtgaZxfSY4a1JWWsLGL5n/hcgS2WE2oxmEHsBuhuRkZDwDovw==
@@ -2056,9 +2038,9 @@ micromark-extension-frontmatter@^2.0.0:
     micromark-util-types "^2.0.0"
 
 micromark-extension-gfm-table@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.0.0.tgz#2cf3fe352d9e089b7ef5fff003bdfe0da29649b7"
-  integrity sha512-PoHlhypg1ItIucOaHmKE8fbin3vTLpDOUg8KAr8gRCF1MOZI9Nquq2i/44wFvviM4WuxJzc3demT8Y3dkfvYrw==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.1.0.tgz#5cadedfbb29fca7abf752447967003dc3b6583c9"
+  integrity sha512-Ub2ncQv+fwD70/l4ou27b4YzfNaCJOvyX4HxXU15m7mpYY+rjuWzsLIPZHJL253Z643RpbcP1oeIJlQ/SKW67g==
   dependencies:
     devlop "^1.0.0"
     micromark-factory-space "^2.0.0"
@@ -2114,9 +2096,9 @@ micromark-factory-whitespace@^2.0.0:
     micromark-util-types "^2.0.0"
 
 micromark-util-character@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/micromark-util-character/-/micromark-util-character-2.0.1.tgz#52b824c2e2633b6fb33399d2ec78ee2a90d6b298"
-  integrity sha512-3wgnrmEAJ4T+mGXAUfMvMAbxU9RDG43XmGce4j6CwPtVxB3vfwXSZ6KhFwDzZ3mZHhmPimMAXg71veiBGzeAZw==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/micromark-util-character/-/micromark-util-character-2.1.0.tgz#31320ace16b4644316f6bf057531689c71e2aee1"
+  integrity sha512-KvOVV+X1yLBfs9dCBSopq/+G1PcgT3lAK07mC4BzXi5E7ahzMAF8oIupDDJ6mievI6F+lAATkbQQlQixJfT3aQ==
   dependencies:
     micromark-util-symbol "^2.0.0"
     micromark-util-types "^2.0.0"
