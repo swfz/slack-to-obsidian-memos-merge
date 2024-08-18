@@ -50,7 +50,8 @@ export const transformer = (message) => {
 
 export const getSlackMessages = async(client, channelId, targetDate) => {
   const result = await client.conversations.history({
-    channel: channelId
+    channel: channelId,
+    limit: 999
   });
 
   console.warn(`${result.messages.length}: Slack投稿`);
