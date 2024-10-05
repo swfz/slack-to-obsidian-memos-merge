@@ -598,16 +598,15 @@
     "@types/node" ">=18.0.0"
 
 "@slack/socket-mode@^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@slack/socket-mode/-/socket-mode-2.0.1.tgz#47585f101b0b7a3e7585e4fc6f9e7ddf1fbcaca2"
-  integrity sha512-Sno1Pw+SJ7eY9kLqeuarV0xQWwksILHPS/Fjcs5nxDQuvZS/u72Te9IEhJTZKY1gNuHXo+vfavFXNzDRWC1ivQ==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@slack/socket-mode/-/socket-mode-2.0.2.tgz#82d2a70deb4869d473100e133a14b548f6631078"
+  integrity sha512-WSLBnGY9eE19jx6QLIP78oFpxNVU74soDIP0dupi35MFY6WfLBAikbuy4Y/rR4v9eJ7MNnd5/BdQNETgv32F8Q==
   dependencies:
     "@slack/logger" "^4"
     "@slack/web-api" "^7.3.4"
     "@types/node" ">=18"
     "@types/ws" "^8"
     eventemitter3 "^5"
-    finity "^0.5.4"
     ws "^8"
 
 "@slack/types@^2.9.0":
@@ -615,28 +614,10 @@
   resolved "https://registry.yarnpkg.com/@slack/types/-/types-2.14.0.tgz#913946b4bcb635dad1d39ceca73699215c38cf6f"
   integrity sha512-n0EGm7ENQRxlXbgKSrQZL69grzg1gHLAVd+GlRVQJ1NSORo0FrApR7wql/gaKdu2n4TO83Sq/AmeUOqD60aXUA==
 
-"@slack/web-api@^7.0.0":
+"@slack/web-api@^7.0.0", "@slack/web-api@^7.3.4":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-7.5.0.tgz#e5a87f3a5062ce35447c95c60a193705cd040673"
   integrity sha512-e1aRwbdnTVz0uQownF8UoyrQFdSs3uXtkPYWCpcb3fW3KuTEGvmEtVzAvj9gqNSlgpWj0o6is7AdptQCELd/rQ==
-  dependencies:
-    "@slack/logger" "^4.0.0"
-    "@slack/types" "^2.9.0"
-    "@types/node" ">=18.0.0"
-    "@types/retry" "0.12.0"
-    axios "^1.7.4"
-    eventemitter3 "^5.0.1"
-    form-data "^4.0.0"
-    is-electron "2.2.2"
-    is-stream "^2"
-    p-queue "^6"
-    p-retry "^4"
-    retry "^0.13.1"
-
-"@slack/web-api@^7.3.4":
-  version "7.3.4"
-  resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-7.3.4.tgz#b62a1268ab84c4742d24d504636c1fde0bc4913f"
-  integrity sha512-KwLK8dlz2lhr3NO7kbYQ7zgPTXPKrhq1JfQc0etJ0K8LSJhYYnf8GbVznvgDT/Uz1/pBXfFQnoXjrQIOKAdSuw==
   dependencies:
     "@slack/logger" "^4.0.0"
     "@slack/types" "^2.9.0"
@@ -729,17 +710,10 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.34.tgz#10964ba0dee6ac4cd462e2795b6bebd407303433"
   integrity sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==
 
-"@types/node@*", "@types/node@>=18":
-  version "22.3.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.3.0.tgz#7f8da0e2b72c27c4f9bd3cb5ef805209d04d4f9e"
-  integrity sha512-nrWpWVaDZuaVc5X84xJ0vNrLvomM205oQyLsRt7OHNZbSHslcWsvgFR7O7hire2ZonjLrWBbedmotmIlJDVd6g==
-  dependencies:
-    undici-types "~6.18.2"
-
-"@types/node@>=18.0.0":
-  version "22.5.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.5.5.tgz#52f939dd0f65fc552a4ad0b392f3c466cc5d7a44"
-  integrity sha512-Xjs4y5UPO/CLdzpgR6GirZJx36yScjh73+2NlLlkFRSoQN8B0DpfXPdZGnvVmLRLOsqDpOfTNv7D9trgGhmOIA==
+"@types/node@*", "@types/node@>=18", "@types/node@>=18.0.0":
+  version "22.7.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.7.4.tgz#e35d6f48dca3255ce44256ddc05dee1c23353fcc"
+  integrity sha512-y+NPi1rFzDs1NdQHHToqeiX2TIS79SWEAw9GYhkkx8bD0ChpfqC+n2j5OXOCpzfojBEBt6DnEnnG9MY0zk1XLg==
   dependencies:
     undici-types "~6.19.2"
 
@@ -1265,11 +1239,6 @@ find-up@^4.0.0, find-up@^4.1.0:
   dependencies:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
-
-finity@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/finity/-/finity-0.5.4.tgz#f2a8a9198e8286467328ec32c8bfcc19a2229c11"
-  integrity sha512-3l+5/1tuw616Lgb0QBimxfdd2TqaDGpfCBpfX6EqtFmqUV3FtQnVEX4Aa62DagYEqnsTIjZcTfbq9msDbXYgyA==
 
 follow-redirects@^1.15.6:
   version "1.15.9"
@@ -2654,11 +2623,6 @@ type-fest@^0.21.3:
   version "0.21.3"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.21.3.tgz#d260a24b0198436e133fa26a524a6d65fa3b2e37"
   integrity sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==
-
-undici-types@~6.18.2:
-  version "6.18.2"
-  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.18.2.tgz#8b678cf939d4fc9ec56be3c68ed69c619dee28b0"
-  integrity sha512-5ruQbENj95yDYJNS3TvcaxPMshV7aizdv/hWYjGIKoANWKjhWNBsr2YEuYZKodQulB1b8l7ILOuDQep3afowQQ==
 
 undici-types@~6.19.2:
   version "6.19.8"
