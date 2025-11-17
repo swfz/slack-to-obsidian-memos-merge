@@ -15,5 +15,5 @@ node merge-posts.js /path/to/obsidian/daily_note 2023-07-30
 | env name | remark |
 |:-|:-|
 | SLACK_CHANNEL_ID | チャンネルID |
-| SLACK_API_TOKEN  | Slack APIのToken |
+| SLACK_BOT_TOKEN  | Slack APIのToken |
 
