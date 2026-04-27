@@ -41,6 +41,10 @@ export const astToMarkdown = (ast) => {
   return replacer(toMarkdown(ast, options));
 }
 
+export const targetDates = (baseDate, term = 1) => {
+  return Array.from({length: term}, (_, i) => dayjs(baseDate).subtract(i, 'day').format('YYYY-MM-DD'));
+}
+
 export const transformer = (message) => {
   const {text, ts} = message;
   const time = dayjs.unix(ts).format('HH:mm:ss');
@@ -48,7 +52,7 @@ export const transformer = (message) => {
   return `${time} ${text}`;
 }
 
-export const getSlackMessages = async(client, channelId, targetDate) => {
+export const getSlackMessagesGroupedByDate = async(client, channelId) => {
   const result = await client.conversations.history({
     channel: channelId,
     limit: 999
@@ -56,16 +60,17 @@ export const getSlackMessages = async(client, channelId, targetDate) => {
 
   console.warn(`${result.messages.length}: Slack投稿`);
 
-  const conversationHistory = result.messages;
-
-  const groupByDate = conversationHistory.reduce((acc, message) => {
+  return result.messages.reduce((acc, message) => {
     const date = dayjs.unix(message.ts).format('YYYY-MM-DD');
 
     acc[date] = acc[date] || [];
 
     return {...acc, [date]: [...acc[date], message]};
   }, {});
+}
 
+export const getSlackMessages = async(client, channelId, targetDate) => {
+  const groupByDate = await getSlackMessagesGroupedByDate(client, channelId);
 
   return groupByDate[targetDate] ? groupByDate[targetDate].map(transformer).reverse() : [];
 }

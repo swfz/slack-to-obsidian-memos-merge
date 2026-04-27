@@ -1,4 +1,4 @@
-import { removePositionFromAst, createAst, parseAst, markdownToAst, mergePosts, astToMarkdown } from './util.js'
+import { removePositionFromAst, createAst, parseAst, markdownToAst, mergePosts, astToMarkdown, targetDates } from './util.js'
 import * as fs from 'fs'
 
 describe.each`
@@ -136,6 +136,39 @@ describe('mergePost', () => {
       '00:20 Slack2',
       '00:20 Memo1',
       '00:20 Memo2',
+    ]);
+  });
+});
+
+describe('targetDates', () => {
+  test('term未指定で指定日のみ', () => {
+    expect(targetDates('2023-08-01')).toStrictEqual(['2023-08-01']);
+  });
+
+  test('term=1で指定日のみ', () => {
+    expect(targetDates('2023-08-01', 1)).toStrictEqual(['2023-08-01']);
+  });
+
+  test('term=3で指定日含む3日分を新しい順', () => {
+    expect(targetDates('2023-08-01', 3)).toStrictEqual([
+      '2023-08-01',
+      '2023-07-31',
+      '2023-07-30',
+    ]);
+  });
+
+  test('月またぎ', () => {
+    expect(targetDates('2023-03-01', 3)).toStrictEqual([
+      '2023-03-01',
+      '2023-02-28',
+      '2023-02-27',
+    ]);
+  });
+
+  test('年またぎ', () => {
+    expect(targetDates('2024-01-01', 2)).toStrictEqual([
+      '2024-01-01',
+      '2023-12-31',
     ]);
   });
 });
