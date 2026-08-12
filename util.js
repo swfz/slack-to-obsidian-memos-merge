@@ -33,12 +33,17 @@ export const astToMarkdown = (ast) => {
       .replace(/\\\*/g, "*");
   };
 
+  // toMarkdownはネストしたリストを2スペースでインデントするため、Obsidianに合わせて4スペースに広げる
+  const expandListIndent = (str) => {
+    return str.replace(/^( +)(?=[-*+] |\d+[.)] )/gm, (indent) => indent.repeat(2));
+  };
+
   const options = {
     bullet: '-',
     extensions: [frontmatterToMarkdown(['yaml'])]
   }
 
-  return replacer(toMarkdown(ast, options));
+  return expandListIndent(replacer(toMarkdown(ast, options)));
 }
 
 export const targetDates = (baseDate, term = 1) => {
