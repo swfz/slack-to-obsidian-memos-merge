@@ -180,5 +180,12 @@ describe('Convert AST and Markdown', () => {
 
     expect(markdown).toBe(fs.readFileSync('./test_daily_note_memos1.md', 'utf8'));
   });
+
+  test('ネストしたリストは4スペースインデントで出力される', () => {
+    const ast = markdownToAst('./test_daily_note_nested_list.md');
+    const markdown = astToMarkdown(ast);
+
+    expect(markdown).toBe(fs.readFileSync('./test_daily_note_nested_list.md', 'utf8'));
+  });
 });
 
