@@ -3,7 +3,7 @@
     "@slack/socket-mode": "^2.0.0",
     "@slack/web-api": "^7.0.0",
     "dayjs": "^1.11.9",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^5.0.0",
     "mdast-util-from-markdown": "^2.0.0",
     "mdast-util-frontmatter": "^2.0.0",
     "mdast-util-gfm-table": "^2.0.0",
